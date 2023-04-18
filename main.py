@@ -154,7 +154,7 @@ with fig_col1:
     ).properties(
         title=line_stat_names[stat] + " since 2010",
         height=700,
-        width=900
+        width=950
     )
     fig_col1.altair_chart(chart)
 
