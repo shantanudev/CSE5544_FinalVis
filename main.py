@@ -7,7 +7,7 @@ import re
 import pickle
 
 st.set_page_config(
-    page_title="NBA Team Performance Dashboard",
+    page_title="NBA Teams Playoff Performance Dashboard",
     page_icon="✅",
     layout="wide",
 )
@@ -153,8 +153,8 @@ with fig_col1:
         ),
     ).properties(
         title=line_stat_names[stat] + " since 2010",
-        height=700,
-        width=950
+        height=450,
+        width=650
     )
     fig_col1.altair_chart(chart)
 
@@ -183,7 +183,7 @@ with fig_col2:
         ax.set_zlabel(options[2])
         for i,val in enumerate(xs):
             ax.scatter(xs[i],ys[i],zs[i],marker=marker_dict[labels[i]],c=color_dict[labels[i]])
-        st.write(fig)
+        fig_col2.write(fig,)
         st.write('Historical 3D Scatter Plot of All NBA Playoff Teams (2010-2022). Green Hat denotes Championship. Red Circle denotes Lost.')
 
 
@@ -205,5 +205,5 @@ with fig_col2:
         ax.set_zlabel(options[2])
         for i,val in enumerate(xs):
             ax.scatter(xs[i],ys[i],zs[i],marker=marker_dict[labels[i]],c=color_dict[labels[i]])
-        st.write(fig)
+        fig_col2.write(fig)
         st.write('Historical 3D Scatter Plot by Selected Teams from 2010-2022 Playoffs. Green Hat denotes Championship. Red Circle denotes Lost.')
